@@ -124,10 +124,116 @@ int main() {
    pib_capita_2 = (pib_2 * 1000000000) / populacao_2;
 
 
+   
+   int escolha;
 
+  //Menu de interação com  o usuário
+   printf("-------------MENU---------------\n");
+   printf("1 - População \n");
+   printf("2 - Área \n");
+   printf("3 - Número de pontos turísticos \n");
+   printf("4 - Densidade demográfica \n");
+   printf("--------------------------------\n");
+
+
+   printf("Qual campo deseja comparar? \n");  //escolha determina critério de escolha
+   scanf("%d",&escolha);
    
 
-   // Leitura dos dados fornecidos da carta 1
+                            
+     switch (escolha)
+   {
+     case 1: 
+     printf("----------------------------\n");
+     printf("       ***RESULTADO***    \n");
+ 
+       if (populacao > populacao_2) 
+   {
+      printf("Carta %c%s  Venceu! \n",estado,codigoCarta); //A carta é referia  pelo seu codigo e estado
+
+   }else if(populacao < populacao_2){
+
+      printf("Carta %c%s  Venceu! \n",estado_2,codigoCarta_2);
+
+   } else{
+
+      printf("Houve um empate!");
+
+   }
+
+      break;
+
+    case 2:
+     printf("----------------------------\n");
+     printf("       ***RESULTADO***    \n");
+    
+      if (area > populacao_2) 
+   {
+
+      printf("Carta %c%s  Venceu! \n",estado,codigoCarta);
+
+   }else if(area < area_2){
+
+      printf("Carta %c%s  Venceu! \n",estado_2,codigoCarta_2);
+
+   } else{
+
+      printf("Houve um empate!");
+
+   }
+
+     break;
+
+     case 3:
+     printf("----------------------------\n");
+     printf("       ***RESULTADO***    \n");
+       if (pontos_turisticos > pontos_turisticos_2) 
+   {
+      printf("Carta %c%s  Venceu! \n",estado,codigoCarta);
+
+   }else if(pontos_turisticos < pontos_turisticos_2){
+
+      printf("Carta %c%s  Venceu! \n",estado_2,codigoCarta_2);
+
+   } else{
+
+      printf("Houve um empate!");
+   }  
+
+     
+     break;
+
+     case 4:
+      printf("----------------------------\n");
+     printf("       ***RESULTADO***    \n");
+
+       if (densidade_populacional < densidade_populacional_2) 
+   {
+     printf("Carta %c%s  Venceu! \n",estado,codigoCarta);
+
+   }else if(densidade_populacional > densidade_populacional_2){
+
+       printf("Carta %c%s  Venceu! \n",estado_2,codigoCarta_2);
+
+   } else{
+
+      printf("Houve um empate! \n");
+
+   }  
+
+     break;
+
+   default:
+    
+   printf(" **Erro** valor invalido digitado! \n");
+
+      break;
+   }
+
+
+
+
+      // Leitura dos dados fornecidos da carta 1
    printf("----------------------------\n");
    printf("Carta 1 \n");
    printf("Código: %c%s \n", estado, codigoCarta);
@@ -151,19 +257,7 @@ int main() {
    printf("Número de Pontos turisticos: %d \n", pontos_turisticos_2);
    printf("Densidade populacional: %.2f hab/km² \n", densidade_populacional_2);
    printf("PIB per capita: %.2f reais \n ", pib_capita_2);
-   
 
-   printf("----------------------------\n");
-   printf("       ***RESULTADO***    \n");
-
-   if (populacao > populacao_2) /*Comparação entre duas cartas é determinada pela população,
-                                 a carta é referia  pelo seu codigo e estado */
-   {
-      printf("Carta %c%s  Venceu! \n",estado,codigoCarta);
-   }else{
-      printf("Carta %c%s  Venceu! \n",estado_2,codigoCarta_2);
-   }
- 
    
 
     return 0;
